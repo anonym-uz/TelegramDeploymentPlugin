@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Vito\Plugins\Makhweb\TelegramDeploymentPlugin;
+namespace App\Vito\Plugins\AnonymUz\TelegramDeploymentPlugin;
 
 use App\Plugins\AbstractPlugin;
 use App\Plugins\RegisterSiteFeature;
 use App\Plugins\RegisterSiteFeatureAction;
-use App\Vito\Plugins\Makhweb\TelegramDeploymentPlugin\Actions\DisableEnhancedNotifications;
-use App\Vito\Plugins\Makhweb\TelegramDeploymentPlugin\Actions\EnableEnhancedNotifications;
+use App\Vito\Plugins\AnonymUz\TelegramDeploymentPlugin\Actions\DisableEnhancedNotifications;
+use App\Vito\Plugins\AnonymUz\TelegramDeploymentPlugin\Actions\EnableEnhancedNotifications;
 use Illuminate\Support\Facades\Event;
 use App\DTOs\DynamicForm;
 use App\DTOs\DynamicField;
