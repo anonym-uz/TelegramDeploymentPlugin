@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Vito\Plugins\AnonymUz\TelegramDeploymentPlugin\Actions;
+namespace AnonymUz\TelegramDeploymentPlugin\Actions;
 
 use App\Models\Site;
 use App\SiteFeatures\Action;

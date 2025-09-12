@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Vito\Plugins\AnonymUz\TelegramDeploymentPlugin\Notifications;
+namespace AnonymUz\TelegramDeploymentPlugin\Notifications;
 
 use App\Models\Deployment;
 use App\Models\Site;

@@ -1,5 +1,5 @@
 {
-    "name": "makhweb/vito-telegram-deployment-plugin",
+    "name": "anonymuz/vito-telegram-deployment-plugin",
     "description": "Enhanced Telegram notifications for Vito deployments",
     "type": "vito-plugin",
     "license": "MIT",
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\Vito\\Plugins\\AnonymUz\\TelegramDeploymentPlugin\\": ""
+            "AnonymUz\\TelegramDeploymentPlugin\\": "src/"
         }
     }
 }
