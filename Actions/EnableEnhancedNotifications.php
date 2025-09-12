@@ -1,11 +1,11 @@
 <?php
 
-namespace AnonymUz\TelegramDeploymentPlugin\Actions;
+namespace App\Vito\Plugins\AnonymUz\TelegramDeploymentPlugin\Actions;
 
 use App\Models\Site;
 use App\SiteFeatures\Action;
 use App\Facades\Notifier;
-use AnonymUz\TelegramDeploymentPlugin\Notifications\EnhancedDeploymentCompleted;
+use App\Vito\Plugins\AnonymUz\TelegramDeploymentPlugin\Notifications\EnhancedDeploymentCompleted;
 use Illuminate\Support\Facades\Event;
 
 class EnableEnhancedNotifications extends Action
