@@ -2,8 +2,11 @@
 
 namespace App\Vito\Plugins\AnonymUz\TelegramDeploymentPlugin\Actions;
 
+use App\DTOs\DynamicField;
+use App\DTOs\DynamicForm;
 use App\Models\Site;
 use App\SiteFeatures\Action;
+use Illuminate\Http\Request;
 
 class DisableEnhancedNotifications extends Action
 {
@@ -11,31 +14,37 @@ class DisableEnhancedNotifications extends Action
 
     public function name(): string
     {
-        return 'disable-enhanced-telegram';
+        return 'Disable Enhanced Notifications';
     }
 
     public function active(): bool
     {
-        return false; // Actions don't have an active state
+        return false;
     }
 
-    public function handle(array $input): void
+    public function form(): ?DynamicForm
     {
-        $this->run($input);
+        return DynamicForm::make([
+            DynamicField::make('warning_alert')
+                ->alert()
+                ->options(['type' => 'warning'])
+                ->description('This will disable enhanced Telegram notifications and revert to standard notifications.'),
+        ]);
     }
 
-    public function run(array $input): void
+    public function handle(Request $request): void
     {
         // Update the site's type_data to disable enhanced notifications
         $typeData = $this->site->type_data ?? [];
-        
+
         if (isset($typeData['enhanced_telegram_notifications'])) {
             $typeData['enhanced_telegram_notifications']['enabled'] = false;
         }
-        
+
         $this->site->type_data = $typeData;
         $this->site->save();
-        
-        $this->addSuccessLog('Enhanced Telegram notifications disabled for site');
+
+        $request->session()->flash('success', 'Enhanced Telegram notifications disabled for this site');
+        $request->session()->flash('info', 'Standard notifications will be used for future deployments');
     }
 }
