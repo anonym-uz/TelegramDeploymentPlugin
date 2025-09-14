@@ -9,6 +9,21 @@ class DisableEnhancedNotifications extends Action
 {
     public function __construct(public Site $site) {}
 
+    public function name(): string
+    {
+        return 'disable-enhanced-telegram';
+    }
+
+    public function active(): bool
+    {
+        return false; // Actions don't have an active state
+    }
+
+    public function handle(array $input): void
+    {
+        $this->run($input);
+    }
+
     public function run(array $input): void
     {
         // Update the site's type_data to disable enhanced notifications
